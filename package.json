@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sfxrlz/PrivateTest.git"
+    "url": "git+https://github.com/Sfxrlz/Yt-Mobile-Control.git"
   },
-  "author": "fuchs",
+  "author": "Fuchs",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sfxrlz/PrivateTest/issues"
+    "url": "https://github.com/Sfxrlz/Yt-Mobile-Control/issues"
   },
-  "homepage": "https://github.com/Sfxrlz/PrivateTest#readme",
+  "homepage": "https://github.com/Sfxrlz/Yt-Mobile-Control#readme",
   "dependencies": {
     "express": "^4.17.1",
     "internal-ip": "^6.0.0",
