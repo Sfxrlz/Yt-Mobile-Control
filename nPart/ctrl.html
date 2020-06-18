@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title> Player Control </title>
+    <script src="static/socket.io.js"></script>
+    <script src="static/main.js"></script>
+  </head>
+  <body>
+    <input type="text" id="msg"></input>
+    <button id="chV" onclick="subm()">Change Video</button>
+    <button id="Pause/Play" onclick="pse()">Pause</button>
+    <button id="volUp" onclick="volUp()">Volume Up</button>
+    <button id="volDown" onclick="volDown()">Volume Down</button>
+    <script type="text/javascript">
+    var socket = io();
+      var subm = function(msg){
+        socket.emit('cmd', msg);
+      };
+      var pse = function(){
+        socket.emit('pse');
+      };
+      var volUp = function(){
+        socket.emit('volUp');
+      };
+      var volDown = function(){
+        socket.emit('volDown');
+      };
+    </script>
+  </body>
+</html>
