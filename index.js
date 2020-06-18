@@ -42,5 +42,5 @@ io.on('connection', function(socket){
 
 http.listen(port, function () {
     var localIP = internalIp.v4.sync();
-    console.log('Webserver läuft und hört auf ' + localIP + ':' + port);
+    console.log('Server Instance Running on: ' + localIP + ':' + port);
 });
