@@ -1,3 +1,3 @@
 # Yt-Mobile-Control
 
-**Control your Youtube Instance via your Phone**
+**Control a Youtube-Instance in your Network**
