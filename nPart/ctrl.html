@@ -5,16 +5,17 @@
     <title> Player Control </title>
     <script src="static/socket.io.js"></script>
     <script src="static/main.js"></script>
-    <link rel="stylesheet" type="text/css" href="static/css/control.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/control.css"/>
   </head>
   <body>
-   <p class="btns" href="#Link">
-    <input type="text" id="msg"></input>
-    <button id="chV" onclick="subm()">Change Video</button>
-    <button id="Pause/Play" onclick="pse()">Pause</button>
-    <button id="volUp" onclick="volUp()">Volume Up</button>
-    <button id="volDown" onclick="volDown()">Volume Down</button>
-  </div>
+    <h1><a class="btn">Remote Control</a></h1>
+      <input type="text" id="msg" style="margin:8px 8px 8px 8px; width:330px;"></input>
+    <section>
+      <a onclick="pse()" class="btn">Pause</a>
+      <a onclick="subm()" class="btn">Change Video</a>
+      <a onclick="volUp()" class="btn">Volume up</a>
+      <a onclick="volDown()" class="btn">Volume Down</a>
+    </section>
     <script type="text/javascript">
     var socket = io();
       var subm = function(msg){
