@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' />
   <head>
     <title> Player Control </title>
     <script src="static/socket.io.js"></script>
     <script src="static/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/control.css" />
   </head>
   <body>
+   <p class="btns" href="#Link">
     <input type="text" id="msg"></input>
     <button id="chV" onclick="subm()">Change Video</button>
     <button id="Pause/Play" onclick="pse()">Pause</button>
     <button id="volUp" onclick="volUp()">Volume Up</button>
     <button id="volDown" onclick="volDown()">Volume Down</button>
+  </div>
     <script type="text/javascript">
     var socket = io();
       var subm = function(msg){
-        socket.emit('cmd', msg);
+        var rUrl = document.getElementById("msg").value;
+        socket.emit('cmd', rUrl);
       };
       var pse = function(){
         socket.emit('pse');

@@ -15,9 +15,12 @@ function onYouTubeIframeAPIReady() {
     events: {}
   });
 }
+function hSubmit(){
+    var url = document.getElementById("yt").value;
+    updateUrl(url);
+};
 
-function updateUrl(){
-var url = document.getElementById("yt").value;
+function updateUrl(url){
 var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
 var match = url.match(regExp);
 if (match && match[2].length == 11) {
@@ -31,8 +34,7 @@ var socket = io();
 
 socket.on('cmd', function(msg){
   console.log("change url");
-  url = msg;
-  updateUrl();
+  updateUrl(msg);
 });
 socket.on('pse', function(){
   if(player.getPlayerState() === 1){ player.pauseVideo();}
