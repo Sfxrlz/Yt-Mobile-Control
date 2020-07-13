@@ -15,6 +15,7 @@
       <a onclick="subm()" class="btn">Change Video</a>
       <a onclick="volUp()" class="btn">Volume up</a>
       <a onclick="volDown()" class="btn">Volume Down</a>
+      <a onclick="cueVid()" class="btn">Add to List</a>
     </section>
     <script type="text/javascript">
     var socket = io();
@@ -30,6 +31,10 @@
       };
       var volDown = function(){
         socket.emit('volDown');
+      };
+      var cueVid = function(){
+        socket.emit('cueVid');
+        msg.value = '';
       };
     </script>
   </body>

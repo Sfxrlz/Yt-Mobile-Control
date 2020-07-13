@@ -40,6 +40,12 @@ io.on('connection', function(socket){
   	});
 });
 
+io.on('connection', function(socket){
+  	socket.on('cueVid', function(msg){
+    	io.emit('cueVid');
+  	});
+});
+
 http.listen(port, function () {
     var localIP = internalIp.v4.sync();
     console.log('Server Instance Running on: ' + localIP + ':' + port);
