@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html>
 <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' />
-  <head>
-    <title> Player Control </title>
-    <script src="static/socket.io.js"></script>
-    <script src="static/main.js"></script>
-    <link rel="stylesheet" type="text/css" href="static/css/control.css"/>
-  </head>
-  <body>
-    <h1><a class="btn">Remote Control</a></h1>
-      <input type="text" id="msg" style="margin:8px 8px 8px 8px; width:330px;"></input>
-    <section>
-      <a onclick="pse()" class="btn">Pause</a>
-      <a onclick="subm()" class="btn">Change Video</a>
-      <a onclick="volUp()" class="btn">Volume up</a>
-      <a onclick="volDown()" class="btn">Volume Down</a>
-      <a onclick="cueVid()" class="btn">Add to List</a>
-    </section>
-    <script type="text/javascript">
+
+<head>
+  <title> Player Control </title>
+  <script src="static/socket.io.js"></script>
+  <script src="static/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/css/control.css" />
+</head>
+
+<body>
+  <h1><a class="btn">Remote Control</a></h1>
+  <input type="text" id="link" style="margin:8px 8px 8px 8px; width:330px;"></input>
+  <section>
+    <a onclick="ev(1)" class="btn">Pause</a>
+    <a onclick="ev(2)" class="btn">Change Video</a>
+    <a onclick="ev(3)" class="btn">Volume up</a>
+    <a onclick="ev(4)" class="btn">Volume Down</a>
+    <a onclick="ev(5)" class="btn">Add to List</a>
+  </section>
+  <script type="text/javascript">
     var socket = io();
-      var subm = function(msg){
-        var rUrl = document.getElementById("msg").value;
-        socket.emit('cmd', rUrl);
-      };
-      var pse = function(){
-        socket.emit('pse');
-      };
-      var volUp = function(){
-        socket.emit('volUp');
-      };
-      var volDown = function(){
-        socket.emit('volDown');
-      };
-      var cueVid = function(){
-        socket.emit('cueVid');
-        msg.value = '';
-      };
-    </script>
-  </body>
+
+    function ev(st) {
+      let edit = document.getElementById("link");
+      switch (st) {
+        case 1:
+          socket.emit('pse');
+          break;
+        case 2:
+          socket.emit('chV', edit.value);
+          edit.clear;
+          break;
+        case 3:
+          socket.emit('vUp', '');
+          break;
+        case 4:
+          socket.emit('vDw', '');
+          break;
+        case 5:
+          socket.emit('liV', edit.value);
+          edit.clear;
+          break;
+      }
+    };
+  </script>
+</body>
+
 </html>

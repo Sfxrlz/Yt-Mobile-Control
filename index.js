@@ -1,52 +1,39 @@
-var express = require('express');
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var internalIp = require("internal-ip");
+const express = require('express');
+const app = require('express')();
+const http = require('http').Server(app);
+const internalIp = require("internal-ip");
 const port = process.env.PORT || 2009;
+let io = require('socket.io')(http);
 
 app.use('/static', express.static('./nPart/'));
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/nPart/index.html');
+app.get('/', function (req, res) {
+	res.sendFile(__dirname + '/nPart/index.html');
 });
 
-app.get('/ctrl', function(req, res){
-  res.sendFile(__dirname + '/nPart/ctrl.html');
+app.get('/ctrl', function (req, res) {
+	res.sendFile(__dirname + '/nPart/ctrl.html');
 });
 
-
-io.on('connection', function(socket){
-  	socket.on('cmd', function(msg){
-    	io.emit('cmd', msg);
-  	});
-});
-
-io.on('connection', function(socket){
-  	socket.on('pse', function(){
-    	io.emit('pse');
-  	});
-});
-
-io.on('connection', function(socket){
-  	socket.on('volUp', function(){
-    	io.emit('volUp');
-  	});
-});
-
-io.on('connection', function(socket){
-  	socket.on('volDown', function(){
-    	io.emit('volDown');
-  	});
-});
-
-io.on('connection', function(socket){
-  	socket.on('cueVid', function(msg){
-    	io.emit('cueVid');
-  	});
+io.on('connection', function (socket) {
+	socket.on('pse', function () {
+		io.emit('pse');
+	});
+	socket.on('chV', function (link) {
+		io.emit('chV', link);
+	});
+	socket.on('vUp', function () {
+		io.emit('vUp');
+	});
+	socket.on('vDw', function () {
+		io.emit('vDw');
+	});
+	socket.on('liV', function (link) {
+		io.emit('liV',link);
+	});
 });
 
 http.listen(port, function () {
-    var localIP = internalIp.v4.sync();
-    console.log('Server Instance Running on: ' + localIP + ':' + port);
+	var localIP = internalIp.v4.sync();
+	console.log('Server Instance Running on: ' + localIP + ':' + port);
 });
