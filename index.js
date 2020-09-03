@@ -1,5 +1,5 @@
-const express = require('express');
-const app = require('express')();
+var express = require('express');
+var app = require('express')();
 const http = require('http').Server(app);
 const internalIp = require("internal-ip");
 const port = process.env.PORT || 2009;
@@ -30,6 +30,9 @@ io.on('connection', function (socket) {
 	});
 	socket.on('liV', function (link) {
 		io.emit('liV',link);
+	});
+	socket.on('nxV', function () {
+		io.emit('nxV');
 	});
 });
 

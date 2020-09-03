@@ -6,7 +6,8 @@
   <title> Player Control </title>
   <script src="static/socket.io.js"></script>
   <script src="static/main.js"></script>
-  <link rel="stylesheet" type="text/css" href="static/css/control.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/nPart/css/style.css" />
 </head>
 
 <body>
@@ -18,6 +19,7 @@
     <a onclick="ev(3)" class="btn">Volume up</a>
     <a onclick="ev(4)" class="btn">Volume Down</a>
     <a onclick="ev(5)" class="btn">Add to List</a>
+    <a onclick="ev(6)" class="btn">Next Video</a>
   </section>
   <script type="text/javascript">
     var socket = io();
@@ -33,18 +35,20 @@
           edit.clear;
           break;
         case 3:
-          socket.emit('vUp', '');
+          socket.emit('vUp');
           break;
         case 4:
-          socket.emit('vDw', '');
+          socket.emit('vDw');
           break;
         case 5:
           socket.emit('liV', edit.value);
           edit.clear;
           break;
+        case 6:
+          socket.emit('nxV');
+          break;
       }
     };
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

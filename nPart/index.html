@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <script src="static/socket.io.js"></script>
-    <script src="static/main.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="static/css/webs.css"/>
-  </head>
-  <body>
-    <div id="container">
-      <div id="header">
-        <h1>Remote Control Host</h1>
-      </div>
-      <div id="controls">
-        <label>url:
-          <input id="yt" type="text" value="https://youtube.com/">
-        </label>
-        <button id="smit" onclick="hSubmit()">Submit</button>
-      </div>
-      <div id="ifr"></div>
-    </div id="footer">
-      Sfxrlz 2020
-    </div>
-    </div>
+    <head>
+        <meta charset="UTF-8"/>
+        <!--meta name="viewport" content="width=device-width", initial-scale=1.0/-->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="/css/style.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body id="body-start">
+        <div class="container-start">
+                <h1 class="indexTitle">Youtube Remote</h1>
+            <div>
+                <a onclick=parseLink() class="btn-start">Input</a>
+                <input type="text" id="input-start" autocomplete="off" required/>
+                <label for="name" class="label-name">
+                    <span class="content-name">Name</span>
+                </label>
+            </div>
+        </div>
     </body>
 </html>

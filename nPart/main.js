@@ -22,21 +22,24 @@ function onYouTubeIframeAPIReady() {
       'autoplay': 1,
       'controls': 1,
       'rel': 1
-     }/*,
+     },
      events: {
-       'onStateChange' : vidEnd
-     }*/
+       'onStateChange': ev
+     }
   });
-  //player.setPlaybackQuality('hd1080');
 }
 
-//player.addEventListener('onStateChange', vidEnd);
-
 function hSubmit() {
-  var url = document.getElementById("yt").value;
+  let url = document.getElementById("yt").value;
   player.loadVideoById(trimUrl(url));
   document.getElementById("smit").clear;
 };
+
+function ev () {
+  if(player.getPlayerState() === 0){
+    nextVid();
+  }
+}
 
 function trimUrl(url) {
   const match = url.match(regExp);
@@ -47,14 +50,13 @@ function trimUrl(url) {
   }
 };
 
-
-function vidEnd(){
-  if(player.getPlayerState=0){
-    player.clearVideo();
-   player.playVideo(trimUrl(linkArr[0]));
+function nextVid(){
+  if(linkArr[0] != null){
+  player.loadVideoById(trimUrl(linkArr[0]));
+  linkArr.shift();
   }
-  linkArr = linkArr.shift();
 };
+
 socket.on('pse', function () {
   if (player.getPlayerState() === 1) {
     player.pauseVideo();
@@ -77,5 +79,7 @@ socket.on('vDw', function () {
 });
 socket.on('liV', function(link){
     linkArr.push(link);
-    console.log(linkArr + "linklist");
+});
+socket.on('nxV', function(){
+  nextVid();
 });
