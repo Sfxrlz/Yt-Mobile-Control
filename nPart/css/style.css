@@ -16,7 +16,8 @@ padding: 10px;
 }
 
 #ifr{
-  margin: 5px;
+  display: table;
+  margin: 0 auto;
 }
 
 .footer{
@@ -51,7 +52,7 @@ padding: 10px;
   display: block !important;
   color: black;
   background-color: #82706d;
-  font-family: Monserrat, sans-serif;
+  font-family: sans-serif;
   font-weight: 800;
   font-size: .85em;
   text-transform: uppercase;
@@ -59,11 +60,6 @@ padding: 10px;
   text-decoration: none;
   position: relative;
 }
-
-.btn:hover, .btn:focus {
-  opacity: 0.8;
-}
-
 
 .btn:active {
   -webkit-transform: scale(0.80);
@@ -74,9 +70,26 @@ padding: 10px;
 }
 
 /*index.html*/
-.container-start{
+.center{
   display: table;
   margin: 0 auto;
+}
+
+.container-start{
+  width: 300px;
+  height: 300px;
+  margin-top: 200px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.indexTitle{
+  font-family: Montserrat, sans-serif;
+  margin: 10px;
+}
+
+#input-start{
+  margin-top: 5px;
 }
 
 .btn2{

@@ -2,7 +2,6 @@ var express = require('express');
 var app = require('express')();
 const http = require('http').Server(app);
 //const internalIp = require("internal-ip");
-const path = require('path');
 const port = process.env.PORT || 2009;
 let io = require('socket.io')(http);
 const router = express.Router()
