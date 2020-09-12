@@ -1,7 +1,6 @@
 var express = require('express');
 var app = require('express')();
 const http = require('http').Server(app);
-//const internalIp = require("internal-ip");
 const port = process.env.PORT || 2009;
 let io = require('socket.io')(http);
 const router = express.Router()
@@ -48,5 +47,5 @@ io.on('connection', function (socket) {
 app.use('/', router);
 http.listen(port, function () {
 	//var localIP = internalIp.v4.sync();
-	console.log('Server Instance Running on: ' /*+ localIP */+ port);
+	console.log('Server Instance Running on: '+ port);
 });
