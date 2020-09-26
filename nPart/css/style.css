@@ -112,15 +112,19 @@ width: 400px;
 }
 
 .indexTitle{
+  margin-top: 15px;
   font-family: Montserrat, sans-serif;
 }
 
 #input-start{
-  margin-top: 5px;
+  width: 280px;
+  margin-top: 40px;
 }
 
 .btn2{
-  margin-top: 10px;
+  font-family: Roboto;
+  font-weight: 600;
+  margin-top: 40px;
   height: 20px;
   width: 100px;
   background-color: white;

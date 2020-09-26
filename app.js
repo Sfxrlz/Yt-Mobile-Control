@@ -3,7 +3,7 @@ var app = require('express')();
 const http = require('http').Server(app);
 const port = process.env.PORT || 2009;
 let io = require('socket.io')(http);
-const router = express.Router()
+const router = express.Router();
 
 app.use('/static', express.static('./nPart/'));
 
@@ -21,7 +21,7 @@ app.get('/main', function(req, res){
 
 app.get('/style', function(req,res){
 	res.sendFile(__dirname + '/nPart/css/style.css');
-})
+});
 
 io.on('connection', function (socket) {
 	socket.on('pse', function () {
