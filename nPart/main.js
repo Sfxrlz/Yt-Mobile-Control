@@ -5,13 +5,14 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 let player;
 let width = window.innerWidth || document.documentElement.clientWidth ||
   document.body.clientWidth;
-width = width * 0.95;
+width = width * 0.8;
 let height = window.innerHeight || document.documentElement.clientHeight ||
   document.body.clientHeight;
-height = height * 0.8;
+height = height * 0.7;
 const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
 var socket = io();
 const linkArr = [];
+
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('ifr', {

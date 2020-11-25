@@ -1,10 +1,10 @@
 {
-  "name": "privatetest",
+  "name": "yt-remote",
   "version": "1.0.0",
   "description": "test webapp",
   "main": "app.js",
   "scripts": {
-    "test": ""
+    "start": "npm run app.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   "homepage": "https://github.com/Sfxrlz/Yt-Mobile-Control#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "internal-ip": "^6.0.0",
+    "internal-ip": "^6.2.0",
     "socket.io": "^2.3.0"
-  }
+  },
+  "devDependencies": {}
 }

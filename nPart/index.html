@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <script src="static/socket.io.js"></script>
-        <!--meta name="viewport" content="width=device-width", initial-scale=1.0/-->
+        <meta name="viewport" content="width=device-width", initial-scale=1.0>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link href="/style" type='text/css' rel="stylesheet"/>
     </head>
@@ -11,19 +11,21 @@
         <div class="container-start">
                 <h1 class="indexTitle center">Youtube Remote</h1>
             <div>
-                <input type="text" id="input-start" class="center" autocomplete="off"/>
-                <div class="btn2 center">
-                    <a href="/main" onclick="prs()" style="text-decoration: none; color: black !important;">Input</a>
+                <input type="text" id="input-start" class="center"></input>
+                <div class="btn center" style="height: 2em !important;">
+                    <a onclick="prs()" style="text-decoration: none; color: black !important;">Input</a>
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-            var socket = io();
+        <script type="text/javascript">      
             function prs(){
-                let url = document.getElementById("input-start").value;
-                if(url.length()!= 0){
-                    socket.emit('chV', url);
-                }
+                return res.redirect('/UserHomePage');    
+                /*var socket = io();
+                let url = document.getElementById("input-start");
+                console.log(url.value);
+                if(url.value.length() > 0){
+                    socket.emit('chV', url.value);
+                }*/
             }
         </script>
     </body>

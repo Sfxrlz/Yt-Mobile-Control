@@ -1,9 +1,10 @@
-var express = require('express');
-var app = require('express')();
+const express = require('express');
+let app = require('express')();
 const http = require('http').Server(app);
 const port = process.env.PORT || 2009;
 let io = require('socket.io')(http);
 const router = express.Router();
+const internalIp = require('internal-ip');
 
 app.use('/static', express.static('./nPart/'));
 
@@ -46,6 +47,5 @@ io.on('connection', function (socket) {
 
 app.use('/', router);
 http.listen(port, function () {
-	//var localIP = internalIp.v4.sync();
-	console.log('Server Instance Running on: '+ port);
+	console.log('Server Instance Running on: ' + internalIp.v4.sync() + ":" + port);
 });
