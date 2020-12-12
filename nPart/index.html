@@ -19,13 +19,9 @@
         </div>
         <script type="text/javascript">      
             function prs(){
-                return res.redirect('/UserHomePage');    
-                /*var socket = io();
-                let url = document.getElementById("input-start");
-                console.log(url.value);
-                if(url.value.length() > 0){
-                    socket.emit('chV', url.value);
-                }*/
+                let urlVal = document.getElementById("input-start").value;               
+                var socket = io();
+                socket.emit('startVideo', urlVal);
             }
         </script>
     </body>
