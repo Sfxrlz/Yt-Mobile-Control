@@ -2,7 +2,7 @@
 
 **Control a Youtube-Instance in your Network**
 
----
+
 **Requirements**
 
 node installation
@@ -13,11 +13,13 @@ npm:
  - socket.io
 
 ---
+
 **Installation**
 1. Clone/Download Repo
 2. run npm install
 
 ---
+
 **Usage**
 
 1. Run ```node app.js``` in 
