@@ -16,14 +16,15 @@ Packages
 
 ---
 
-**Installation**
+Installation
+---
 1. Clone/Download Repo
 2. run npm install
 
 ---
 
-**Usage**
-
+Usage
+---
 1. Run ```node app.js``` in 
 2. Open the shown ip and port and add /main on the device you want to be the host(e.g. PC)
    e.g.	```192.168.0.100:2009/main```
